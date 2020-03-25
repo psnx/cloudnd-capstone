@@ -3,18 +3,18 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'Building stage'
+                sh 'echo "Building stage"'
                 sh 'tidy -q -e *.html' 
             }
         }
         stage('Test') { 
             steps {
-                sh 'Testing stage'
+                sh 'echo "Testing stage"'
             }
         }
         stage('Deploy') { 
             steps {
-                sh 'Deployment stage'
+                sh 'echo "Deployment stage"'
             }
         }
     }
