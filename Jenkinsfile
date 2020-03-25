@@ -4,7 +4,6 @@ pipeline {
         stage('Build') { 
             steps {
                 sh 'echo "Building stage"'
-                sh 'tidy -q -e *.html' 
             }
         }
         stage('Test') { 
