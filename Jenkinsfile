@@ -3,18 +3,18 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'echo Linting HTML'
+                sh 'Building stage'
                 sh 'tidy -q -e *.html' 
             }
         }
         stage('Test') { 
             steps {
-                // 
+                sh 'Testing stage'
             }
         }
         stage('Deploy') { 
             steps {
-                // 
+                sh 'Deployment stage'
             }
         }
     }
