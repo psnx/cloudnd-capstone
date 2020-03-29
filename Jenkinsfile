@@ -1,4 +1,9 @@
 pipeline {
+    environment {
+    registry = 'psnx/cloudnd-capstone'
+    registryCredential = 'dockerhub'
+    dockerImage = ''
+    }
   agent any
   stages {
     stage('Building image') {
@@ -28,9 +33,5 @@ pipeline {
     }
 
   }
-  environment {
-    registry = 'psnx/cloudnd-capstone'
-    registryCredential = 'dockerhub'
-    dockerImage = ''
-  }
+  
 }
