@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git(url: 'git@github.com:psnx/cloudnd-capstone.git', credentialsId: 'Jenkins')
+        git(url: 'git@github.com:psnx/cloudnd-capstone.git', credentialsId: 'GitHub-machine')
       }
     }
 
