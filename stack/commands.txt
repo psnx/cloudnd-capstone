@@ -1,0 +1,5 @@
+aws cloudformation create-stack --stack-name capstone --region eu-central-1 --template-body file://network.yml --parameters file://params.json
+
+aws cloudformation create-stack --stack-name capstone-eks --region eu-central-1 --template-body file://cluster.yml --parameters file://cluster-params.json --capabilities CAPABILITY_NAMED_IAM
+
+aws delete-stack --stack-name capstone --region eu-central-1
