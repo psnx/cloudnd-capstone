@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/psnx/cloudnd-capstone.git'
+        git 'git@github.com:psnx/cloudnd-capstone.git'
       }
     }
     stage('Building image') {
