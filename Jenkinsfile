@@ -8,12 +8,13 @@ pipeline {
         stage('Build') {
             agent {
                 docker {
-                    image 'hub.docker.com/psnx'
-                    label 'capstone'
+                    image 'capstone'
+                    label 'v1'
                     registryUrl 'https://hub.docker.com/psnx/'
                     registryCredentialsId 'docker-hub'
                 }
             }
+        }
         stage('Test') { 
             steps {
                 sh 'echo "Testing stage"'
