@@ -1,7 +1,7 @@
 pipeline {
     environment {
     registry = 'psnx/cloudnd-capstone'
-    registryCredential = 'dockerhub'
+    registryCredential = 'docker-hub'
     dockerImage = ''
     }
   agent any
@@ -15,10 +15,10 @@ pipeline {
       }
     }
 
-    stage('Deploy Image') {
+    stage('Push Image') {
       steps {
         script {
-          docker.withRegistry( '', registryCredential ) {
+          docker.withRegistry('', registryCredential ) {
             dockerImage.push()
           }
         }
