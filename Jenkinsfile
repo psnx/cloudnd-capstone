@@ -31,11 +31,11 @@ pipeline {
         sh "docker rmi $registry:$BUILD_NUMBER"
       }
     }
-    
+
     stage('Deploy'){
       steps {
-        sh "kubectl apply -f k8s/deployment"
-        sh "kubectl get svc"
+        sh "/usr/local/bin/kubectl apply -f k8s/deployment"
+        sh "/usr/local/bin/kubectl get svc"
       }
     }
 
