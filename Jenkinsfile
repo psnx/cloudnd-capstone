@@ -39,10 +39,10 @@ pipeline {
 //      }
 //    }
   }
-  agent {
-    kubernetes{
-      yamlFile: "${WORKSPACE}/k8s/capstone.yml" 
-    }
+
+  kubernetes{
+    yamlFile: "${WORKSPACE}/k8s/capstone.yml" 
   }
+
   
 }
