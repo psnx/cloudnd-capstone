@@ -32,11 +32,11 @@ pipeline {
       }
     }
 
-    stage('Deploy'){
-        dir("k8s"){    
-          steps {
-            sh "/usr/local/bin/kubectl apply -f deployment.yml"
-            sh "/usr/local/bin/kubectl get svc"
+    stage('Deploy'){       
+      steps {
+        dir("k8s"){  
+          sh "/usr/local/bin/kubectl apply -f deployment.yml"
+          sh "/usr/local/bin/kubectl get svc"
         }
       }
     }
