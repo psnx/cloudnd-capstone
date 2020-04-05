@@ -34,7 +34,7 @@ pipeline {
 
     stage('Deploy'){
       steps {
-        sh "/usr/local/bin/kubectl apply -f k8s/deployment"
+        sh "/usr/local/bin/kubectl apply -f ./k8s/deployment"
         sh "/usr/local/bin/kubectl get svc"
       }
     }
