@@ -31,15 +31,15 @@ pipeline {
       }
     }
     
-    stage('Set current kubectl context') {
-			steps {
-				withAWS(region:'eu-central-1', credentials:'eks-admin') {
-					sh '''
-						kubectl config use-context arn:aws:eks:eu-central-1:174130021671:cluster/prod
-					'''
-				}
-			}
-		}
+    //stage('Set current kubectl context') {
+		//	steps {
+		//		withAWS(region:'eu-central-1', credentials:'eks-admin') {
+		//			sh '''
+		//				kubectl config use-context arn:aws:eks:eu-central-1:174130021671:cluster/prod
+		//			'''
+		//		}
+		//	}
+		//}
 
     stage('Deploy blue container') {
 			steps {
