@@ -1,9 +1,4 @@
 pipeline {
-    environment {
-    registry = 'psnx/cloudnd-capstone'
-    registryCredential = 'docker-hub'
-    dockerImage = ''
-    }
   agent any
   stages {
     stage('Building image') {
@@ -22,6 +17,7 @@ pipeline {
             dockerImage.push()
           }
         }
+
       }
     }
 
@@ -30,25 +26,33 @@ pipeline {
         sh "docker rmi $registry:$BUILD_NUMBER"
       }
     }
-    
+
     stage('Set current kubectl context') {
-			steps {
-				withAWS(region:'eu-central-1', credentials:'tamas') {
-					sh '''
+      steps {
+        withAWS(region: 'eu-central-1', credentials: 'tamas') {
+          sh '''
 						kubectl config use-context arn:aws:eks:eu-central-1:174130021671:cluster/prod
 					'''
-				}
-			}
-		}
+        }
+
+      }
+    }
 
     stage('Deploy blue container') {
-			steps {
-				withAWS(region:'eu-central-1', credentials:'tamas') {
-					sh '''
+      steps {
+        withAWS(region: 'eu-central-1', credentials: 'tamas') {
+          sh '''
 						kubectl apply -f ./k8s/capstone.yml
 					'''
-				}
-			}
-		}
+        }
+
+      }
+    }
+
+  }
+  environment {
+    registry = 'psnx/cloudnd-capstone'
+    registryCredential = 'docker-hub'
+    dockerImage = ''
   }
 }
