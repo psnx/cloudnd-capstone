@@ -45,7 +45,7 @@ pipeline {
 			steps {
 				withAWS(region:'eu-central-1', credentials:'eks-admin') {
 					sh '''
-						kubectl apply -f ./k8s/capstone.yml
+						kubectl apply -f k8s/capstone.yml
 					'''
 				}
 			}
