@@ -4,14 +4,7 @@ pipeline {
     registryCredential = 'docker-hub'
     dockerImage = ''
     }
-  agent {
-  kubernetes {
-      label 'cloudnd-capstone'
-      idleMinutes 5  // how long the pod will live after no jobs have run on it
-      yamlFile 'k8s/capstone.yml'  // path to the pod definition relative to the root of our project 
-      defaultContainer 'capstone'  // define a default container if more than a few stages use it, will default to jnlp container
-    }
-  }
+  agent any
   stages {
     stage('Building image') {
       steps {
