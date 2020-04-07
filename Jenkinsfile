@@ -42,11 +42,11 @@ pipeline {
 			}
 		}
 
-    stage('Deploy to kubernetes cluster') {
+    stage('Deploy blue container') {
 			steps {
 				withAWS(region:'eu-central-1', credentials:'eks-admin') {
 					sh '''
-                kubectl apply -f ${WORKSPACE}/k8s/capstone.yml
+						kubectl apply -f ./k8s/capstone.yml
 					'''
 				}
 			}
