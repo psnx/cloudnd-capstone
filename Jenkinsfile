@@ -27,23 +27,12 @@ pipeline {
       }
     }
 
-    stage('ENV') {
+    stage('Deploy') {
       steps {
         withAWS(region: 'eu-central-1', credentials: 'tamas') {
           sh '''
 						kubectl config use-context arn:aws:eks:eu-central-1:174130021671:cluster/prod
-            kubectl version
-					'''
-        }
-
-      }
-    }
-
-    stage('Deploy blue container') {
-      steps {
-        withAWS(region: 'eu-central-1', credentials: 'tamas') {
-          sh '''
-						kubectl apply -f ./k8s/capstone.yml
+            kubectl apply -f ./k8s/capstone.yml
 					'''
         }
 
