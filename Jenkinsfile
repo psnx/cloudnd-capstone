@@ -32,8 +32,9 @@ pipeline {
         withAWS(region: 'eu-central-1', credentials: 'tamas') {
           sh '''
 						kubectl config use-context arn:aws:eks:eu-central-1:174130021671:cluster/prod
-            # cat ./k8s/capstone.yml | sed 's/%TAG%/'"$GIT_COMMIT"'/g' | kubectl apply -f -
-            kubectl apply -f ./k8s/capstone.yml
+            cat ./k8s/capstone.yml | sed 's/%TAG%/'"$GIT_COMMIT"'/g' | kubectl apply -f -
+            # kubectl apply -f ./k8s/capstone.yml
+            echo "image: $registry:$GIT_COMMIT"
 					'''
         }
 
