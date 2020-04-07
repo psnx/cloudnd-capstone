@@ -36,7 +36,7 @@ pipeline {
 				withAWS(region:'eu-central-1', credentials:'eks-admin') {
 					sh '''
 						kubectl config use-context arn:aws:eks:eu-central-1:174130021671:cluster/prod
-            kubectl apply -f ./k8s/capstone.yml
+            kubectl apply -f ./k8s/capstone.yml --validate=false
 					'''
 				}
 			}
