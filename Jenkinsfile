@@ -4,7 +4,7 @@ pipeline {
     stage('Building image') {
       steps {
         script {
-          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+          dockerImage = docker.build registry + ":$GIT_COMMIT"
         }
 
       }
@@ -23,7 +23,7 @@ pipeline {
 
     stage('Remove Unused docker image') {
       steps {
-        sh "docker rmi $registry:$BUILD_NUMBER"
+        sh "docker rmi $registry:$GIT_COMMIT"
       }
     }
 
@@ -32,7 +32,7 @@ pipeline {
         withAWS(region: 'eu-central-1', credentials: 'tamas') {
           sh '''
 						kubectl config use-context arn:aws:eks:eu-central-1:174130021671:cluster/prod
-            cat ./k8s/capstone.yml | sed 's/%TAG%/'"$BUILD_NUMBER"'/g' | kubectl apply -f -
+            cat ./k8s/capstone.yml | sed 's/%TAG%/'"$GIT_COMMIT"'/g' | kubectl apply -f -
 					'''
         }
 
