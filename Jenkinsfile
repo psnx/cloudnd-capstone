@@ -32,7 +32,7 @@ pipeline {
         withAWS(region: 'eu-central-1', credentials: 'tamas') {
           sh '''
 						kubectl config use-context arn:aws:eks:eu-central-1:174130021671:cluster/prod
-            kubectl apply -f ./k8s/capstone.yml
+            cat ./k8s/capstone.yml | sed 's/%TAG%/'"$BUILD_NUMBER"'/g' | kubectl apply -f -
 					'''
         }
 

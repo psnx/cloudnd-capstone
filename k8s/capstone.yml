@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: capstone
-        image: psnx/cloudnd-capstone:28
+        image: psnx/cloudnd-capstone:%TAG%
         ports:
         - containerPort: 80
       imagePullSecrets:
