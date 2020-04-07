@@ -31,12 +31,21 @@ pipeline {
       }
     }
     
-    stage('Deploy to kubernetes cluster') {
+    stage('ENV') {
 			steps {
 				withAWS(region:'eu-central-1', credentials:'eks-admin') {
 					sh '''
 						kubectl config use-context arn:aws:eks:eu-central-1:174130021671:cluster/prod
-            kubectl apply -f ./k8s/capstone.yml --validate=false
+					'''
+				}
+			}
+		}
+
+    stage('Deploy to kubernetes cluster') {
+			steps {
+				withAWS(region:'eu-central-1', credentials:'eks-admin') {
+					sh '''
+                kubectl apply -f ./k8s/capstone.yml
 					'''
 				}
 			}
