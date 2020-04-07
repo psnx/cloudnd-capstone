@@ -36,6 +36,7 @@ pipeline {
 				withAWS(region:'eu-central-1', credentials:'eks-admin') {
 					sh '''
 						kubectl config use-context arn:aws:eks:eu-central-1:174130021671:cluster/prod
+            kubectl version
 					'''
 				}
 			}
