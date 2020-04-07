@@ -2,12 +2,9 @@
   <v-container>
     <v-row class="text-center">
       <v-col cols="12">
-        <v-img
-          :src="require('../assets/exit.png')"
-          class="my-3"
-          contain
-          height="200"
-        />
+        <h2 class="headline font-weight-bold mb-3">
+          Cloud DevOps Engineer Nanodegree Program
+        </h2>
       </v-col>
 
       <v-col class="mb-4">
@@ -26,7 +23,7 @@
         cols="12"
       >
         <h2 class="headline font-weight-bold mb-3">
-          Attemtpt 1
+          Submission Attemp 1
         </h2>
 
         <v-row justify="center">
@@ -38,48 +35,6 @@
             target="_blank"
           >
             {{ next.text }}
-          </a>
-        </v-row>
-      </v-col>
-
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
-        <h2 class="headline font-weight-bold mb-3">
-          Important Links
-        </h2>
-
-        <v-row justify="center">
-          <a
-            v-for="(link, i) in importantLinks"
-            :key="i"
-            :href="link.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ link.text }}
-          </a>
-        </v-row>
-      </v-col>
-
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
-        <h2 class="headline font-weight-bold mb-3">
-          Ecosystem
-        </h2>
-
-        <v-row justify="center">
-          <a
-            v-for="(eco, i) in ecosystem"
-            :key="i"
-            :href="eco.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ eco.text }}
           </a>
         </v-row>
       </v-col>
