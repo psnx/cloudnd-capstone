@@ -1,13 +1,13 @@
 pipeline {
   agent any
   stages {
+    
     stage('Linting Dockerfile') {
       steps {
         sh "docker run --rm -i hadolint/hadolint < Dockerfile"
       }
     }
 
-  stages {
     stage('Building image') {
       steps {
         script {
