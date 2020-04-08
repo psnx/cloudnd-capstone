@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    
+
     stage('Linting Dockerfile') {
       steps {
         sh "docker run --rm -i hadolint/hadolint < Dockerfile"
@@ -13,7 +13,6 @@ pipeline {
         script {
           dockerImage = docker.build image + ":$GIT_COMMIT"
         }
-
       }
     }
 
@@ -43,7 +42,6 @@ pipeline {
             echo "image: $image:$GIT_COMMIT"
 					'''
         }
-
       }
     }
 
