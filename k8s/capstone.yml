@@ -9,6 +9,10 @@ spec:
   selector:
     matchLabels:
       app: capstone
+  strategy:
+    type: RollingUpdate
+    maxSurge: 0
+    maxUnavailable: 1
   template:
     metadata:
       labels:

@@ -23,7 +23,7 @@
         cols="12"
       >
         <h2 class="headline font-weight-bold mb-3">
-          Submission Attempt 1
+          Submission Attempt 2
         </h2>
 
         

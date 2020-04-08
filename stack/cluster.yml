@@ -80,7 +80,7 @@ Resources:
     Properties:
       ClusterName: !Ref Cluster 
       InstanceTypes:
-      - t2.micro
+      - t3.small
       NodeRole: !GetAtt NodeInstanceRole.Arn
       ScalingConfig:
         MinSize: 1
