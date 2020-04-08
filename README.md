@@ -25,6 +25,18 @@ Steps:
 - Clean up - delete local image
 - Deploy to kubernetes cluster (rolling deployment)
 
+#### Rolling Deployment
+Rather than updating all pods simultaneously, new pods are added before old ones are terminated, thus the transition is seamless and does not cause downtime:  
+- Update initiated to update some of the pods in a kubernetes cluster  
+- The new pods are rolled out  
+- If the rollout is successful the old pods are terminated (otherwise they remain active)  
+A rolling deployment is used to reduce application downtime and unforeseen consequences or errors in software  updates.  
+The pace of rollout is configured by the following parameters:  
+- `maxSurge`: The number of pods that can be created above the desired amount of pods during an update  
+- `maxUnavailable`: The number of pods that can be unavailable during the update process  
+
+See the `k8s/capstone.yml`file for reference.  
+
 ### The App
 The app is a single page appliacion that was created with [vue](vuejs.org) and [vueatify](https://vuetifyjs.com).
 
