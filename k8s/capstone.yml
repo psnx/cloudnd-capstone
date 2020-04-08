@@ -11,8 +11,9 @@ spec:
       app: capstone
   strategy:
     type: RollingUpdate
-    maxSurge: 0
-    maxUnavailable: 1
+    rollingUpdate
+      maxSurge: 0
+      maxUnavailable: 1
   template:
     metadata:
       labels:
