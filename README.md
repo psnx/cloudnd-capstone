@@ -2,7 +2,7 @@
 ### The project
 This is a demonstration of an automated process for application deployment, including 
 Infrastructure as Code (IAC) and a CI/CD pipeline.
-This is a good way of building scaleable, fault tolerant and robust applications. 
+This is a good way of building scaleable, fault tolerant and robust applications.   
 ### Infrastructure
 AWS CloudFormation script is used to set up the infrastructuere in AWS, the scripts are located
 in the `stack` folder
@@ -23,13 +23,11 @@ Steps:
 - Building docker image locally
 - Pushing image to [dockerhub](hub.docker.com)
 - Clean up - delete local image
-- Deploy to kubernetes cluster
+- Deploy to kubernetes cluster (rolling deployment)
 
 ### The App
 The app is a single page appliacion that was created with [vue](vuejs.org) and [vueatify](https://vuetifyjs.com).
 
-### URL
-The deployed application can be found here:
 
 
 

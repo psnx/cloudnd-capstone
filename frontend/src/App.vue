@@ -30,11 +30,26 @@
         <span class="mr-2">Github/psnx</span>
         <v-icon>mdi-github</v-icon>
       </v-btn>
+
+      <v-btn
+        href="https://hub.docker.com/repository/docker/psnx/cloudnd-capstone/"
+        target="_blank"
+        text
+      >
+        <span class="mr-2-center">DockerHub/psnx/capstone</span>
+        <v-icon>mdi-docker</v-icon>
+      </v-btn>
     </v-app-bar>
 
     <v-content>
       <HelloWorld/>
     </v-content>
+    <v-footer>
+      <span class="mr-2"> Made with 
+        <a href="https://vuejs.org">Vue</a> and 
+        <a href="https://vuetifyjs.com/en/">Vuetify</a> 
+      </span>
+    </v-footer>
   </v-app>
 </template>
 

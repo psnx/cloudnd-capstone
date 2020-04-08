@@ -14,7 +14,7 @@
 
         <p class="subheading font-weight-regular">
           Capstone Project Subussion
-          <br>Tamas Panyi
+          <br> by Tamas Panyi
         </p>
       </v-col>
 

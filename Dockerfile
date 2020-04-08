@@ -1,9 +1,7 @@
 # build stage
-This is an intentional mistake to make lint fail
 FROM node:lts-alpine as build-stage
 WORKDIR /app
 COPY frontend ./
-#COPY frontend/package*.json ./
 RUN npm install
 RUN npm run build
 
