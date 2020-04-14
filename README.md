@@ -40,7 +40,20 @@ See the `k8s/capstone.yml`file for reference.
 ### The App
 The app is a single page appliacion that was created with [vue](vuejs.org) and [vueatify](https://vuetifyjs.com).
 
+## A few useful tips
 
+```bash
+sudo cp -i /home/ubuntu/.kube/config /var/lib/jenkins/.kube/config
+sudo chown -R jenkins:jenkins  /var/lib/jenkins/.kube/config
+sudo chown -R jenkins:jenkins  /var/lib/jenkins/.kube/
+```
+### Cloudformation
+aws cloudformation create-stack --stack-name capstone --region eu-central-1 --template-body file://network.yml --parameters file://params.json
 
+aws cloudformation create-stack --stack-name capstone-eks --region eu-central-1 --template-body file://cluster.yml --parameters file://cluster-params.json --capabilities CAPABILITY_NAMED_IAM
 
+aws delete-stack --stack-name capstone --region eu-central-1
+
+### update config
+aws eks --region eu-central-1 update-kubeconfig --name prod
 
